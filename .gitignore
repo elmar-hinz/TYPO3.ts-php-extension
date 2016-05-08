@@ -3,3 +3,5 @@
 a.out
 lex.yy.c
 my.tst
+
+/vendor/
