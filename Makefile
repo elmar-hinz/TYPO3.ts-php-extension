@@ -12,3 +12,7 @@ lexer: lexer.c
 lexer.c: src/typoscript.lex
 	flex -o build/lexer.c src/typoscript.lex
 
+install_flex:
+	cd build
+	wget "https://downloads.sourceforge.net/flex/flex-2.6.0.tar.bz2"
+

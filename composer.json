@@ -2,7 +2,8 @@
     "name": "elmar-hinz/typoscript-php-extension",
     "description": "An extension for PHP to render TypoScript to a PHP array.",
     "require": {
-        "phpunit/phpunit": "^5.3"
+        "phpunit/phpunit": "^5.3",
+        "jaz303/phake": "^0.6.0"
     },
     "authors": [
         {
