@@ -40,7 +40,34 @@ task('test', 'lexer', function() {
 });
 
 group('brew', function() {
-	desc('Brew flex');
+	desc('Brew Bison');
+	task('bison', function() {
+	    $source = "http://ftpmirror.gnu.org/bison/bison-3.0.4.tar.gz";
+		// setup directories
+		$base = getcwd();
+		$vendor = "bison";
+		$program = "bison";
+		$relativeBin = "bin/bison";
+		$prefix = setupVendorProgramPath($base, $vendor, $program, $relativeBin);
+		// get sources
+		$target = getSources($base, $source);
+		// brew
+		try {
+			chdir("./build");
+			execute("tar -xjf ".$target);
+			chdir("./bison-3.0.4");
+			$configure = "./configure --disable-dependency-tracking " .
+				" --prefix=" . $prefix;
+			execute($configure);
+			execute ("make");
+			execute ("make install");
+		} catch (Excecption $e) {
+			throw new Excecption("Failed to brew bison.");
+		} finally {
+			chdir($base);
+		}
+	});
+	desc('Brew Flex');
 	task('flex', function() {
 		$source = "https://downloads.sourceforge.net/flex/flex-2.6.0.tar.bz2";
 		// setup directories
