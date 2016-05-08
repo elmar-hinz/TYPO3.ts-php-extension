@@ -23,6 +23,8 @@ class ExpectationTest extends PHPUnit_Framework_TestCase
 	{
 		$output = "";
 		$prog = 'bin/lexer';
+		if(!is_file($prog))
+			 throw new Exception("No file: ".$prog);
 		$descriptorspec = array(
 		   0 => array("pipe", "r"),  // stdin
 		   1 => array("pipe", "w"),  // stdout
@@ -34,6 +36,8 @@ class ExpectationTest extends PHPUnit_Framework_TestCase
 			 fclose($pipes[0]);
 			 $output = stream_get_contents($pipes[1]);
 			 fclose($pipes[1]);
+		} else {
+			 throw new Exception("Could not execute ".$prog.".");
 		}
 		$return_value = proc_close($process);
 		return trim($output) . "\n";
