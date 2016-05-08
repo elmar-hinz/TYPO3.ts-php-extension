@@ -7,13 +7,14 @@ PHP Extension to parse TypoScript to a PHP Array
 Initial requirements
 ====================
 
-PHP, composer
+PHP, composer, gcc
 
 Getting started
 ===============
+::
 
-composer install
-./phake
+  composer install
+  ./phake
 
 
 
