@@ -1,7 +1,8 @@
 /build/*
 /bin/*
+/downloads/*
+/vendor/*
 a.out
 lex.yy.c
 my.tst
 
-/vendor/
