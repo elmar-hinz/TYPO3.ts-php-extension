@@ -1,0 +1,5 @@
+/build/*
+/bin/*
+a.out
+lex.yy.c
+my.tst
