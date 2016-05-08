@@ -1,0 +1,13 @@
+{
+    "name": "elmar-hinz/typoscript-php-extension",
+    "description": "An extension for PHP to render TypoScript to a PHP array.",
+    "require": {
+        "phpunit/phpunit-mock-objects": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "Elmar Hinz",
+            "email": "t3elmar@gmail.com"
+        }
+    ]
+}
